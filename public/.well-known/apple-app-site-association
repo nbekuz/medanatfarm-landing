@@ -1,0 +1,14 @@
+{
+  "applinks": {
+    "apps": [],
+    "details": [
+      {
+        "appID": "ZK52G8N825.com.nbek.medanatfarm",
+        "paths": [
+          "/premium/return",
+          "/premium/return/*"
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,278 @@
+$color-primary: #1677ff;
+$color-primary-soft: #eef4ff;
+$color-primary-hover: #3c89ff;
+$color-bg: #f7f9fc;
+$color-bg-muted: #eef2f7;
+$color-text: #1f2937;
+$color-text-secondary: #667085;
+$color-border: #e5e7eb;
+$color-white: #ffffff;
+$radius-md: 16px;
+$radius-lg: 20px;
+$radius-xl: 24px;
+$shadow-soft: 0 8px 24px rgba(31, 41, 55, 0.06);
+$shadow-card: 0 12px 32px rgba(22, 119, 255, 0.08);
+$transition: 250ms ease;
+$container: 1200px;
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family:
+    'Segoe UI',
+    'Noto Sans',
+    system-ui,
+    -apple-system,
+    sans-serif;
+  color: $color-text;
+  background: $color-bg;
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: $color-primary;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.container {
+  width: min(#{$container}, calc(100% - 2rem));
+  margin-inline: auto;
+}
+
+.section {
+  padding-block: 4.5rem;
+}
+
+.section--muted {
+  background: $color-bg-muted;
+}
+
+.section-title {
+  margin: 0 0 0.75rem;
+  font-size: clamp(1.55rem, 2.4vw, 2.05rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: $color-text;
+  line-height: 1.25;
+}
+
+.section-subtitle {
+  margin: 0 0 2rem;
+  color: $color-text-secondary;
+  font-size: 1.05rem;
+  line-height: 1.65;
+  max-width: 40rem;
+}
+
+.section-header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-bottom: 0.5rem;
+}
+
+.section-link {
+  font-weight: 600;
+  text-decoration: none;
+  color: $color-primary;
+  transition: color $transition;
+
+  &:hover {
+    color: $color-primary-hover;
+    text-decoration: none;
+  }
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  min-height: 48px;
+  padding: 0.75rem 1.35rem;
+  border-radius: 12px;
+  border: 1px solid transparent;
+  font-size: 0.975rem;
+  font-weight: 600;
+  line-height: 1.2;
+  cursor: pointer;
+  text-decoration: none;
+  transition:
+    background-color $transition,
+    border-color $transition,
+    color $transition,
+    transform $transition,
+    box-shadow $transition;
+
+  &:focus-visible {
+    outline: 2px solid $color-primary;
+    outline-offset: 2px;
+  }
+
+  &:hover {
+    text-decoration: none;
+    transform: translateY(-1px);
+  }
+}
+
+.btn--primary {
+  background: $color-primary;
+  color: $color-white;
+  box-shadow: 0 8px 20px rgba(22, 119, 255, 0.22);
+
+  &:hover {
+    background: $color-primary-hover;
+    color: $color-white;
+  }
+}
+
+.btn--secondary {
+  background: $color-white;
+  color: $color-text;
+  border-color: $color-border;
+
+  &:hover {
+    border-color: #c7d7fe;
+    color: $color-primary;
+    background: #f8fbff;
+  }
+}
+
+.btn--ghost {
+  background: transparent;
+  color: $color-text;
+  border-color: transparent;
+
+  &:hover {
+    color: $color-primary;
+    background: $color-primary-soft;
+  }
+}
+
+.page-card {
+  background: $color-white;
+  border: 1px solid $color-border;
+  border-radius: $radius-md;
+  padding: 2rem;
+  box-shadow: $shadow-soft;
+}
+
+.prose {
+  line-height: 1.75;
+  color: $color-text;
+
+  h1,
+  h2,
+  h3 {
+    margin-top: 1.5rem;
+    margin-bottom: 0.75rem;
+    color: $color-text;
+  }
+
+  p {
+    margin: 0 0 1rem;
+  }
+
+  ul,
+  ol {
+    margin: 0 0 1rem;
+    padding-left: 1.25rem;
+  }
+}
+
+.text-pre {
+  white-space: pre-wrap;
+  line-height: 1.75;
+}
+
+.empty-state {
+  padding: 2rem;
+  text-align: center;
+  color: $color-text-secondary;
+}
+
+.page-spin {
+  display: block;
+  width: 100%;
+  min-height: 160px;
+
+  &.ant-spin-nested-loading > div > .ant-spin {
+    max-height: none;
+  }
+
+  .ant-spin-container {
+    min-height: 160px;
+  }
+
+  &.ant-spin-spinning .ant-spin-container {
+    opacity: 0.45;
+  }
+}
+
+.page-spin__placeholder {
+  min-height: 160px;
+}
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-up {
+  animation: fade-up 0.55s ease both;
+}
+
+.fade-up-delay-1 {
+  animation-delay: 0.08s;
+}
+
+.fade-up-delay-2 {
+  animation-delay: 0.16s;
+}
+
+.fade-up-delay-3 {
+  animation-delay: 0.24s;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .fade-up,
+  .fade-up-delay-1,
+  .fade-up-delay-2,
+  .fade-up-delay-3 {
+    animation: none;
+  }
+
+  .btn:hover {
+    transform: none;
+  }
+}

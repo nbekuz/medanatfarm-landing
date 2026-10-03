@@ -1,0 +1,12 @@
+[
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.nbek.Medanatfarm",
+      "sha256_cert_fingerprints": [
+        "D5:30:A1:03:4E:E1:E3:59:73:43:56:86:F2:27:EB:1C:73:68:8B:BF:D6:13:96:07:28:72:1D:EF:76:C7:10:4B"
+      ]
+    }
+  }
+]

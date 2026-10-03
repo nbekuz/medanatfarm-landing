@@ -1,0 +1,1 @@
+import{n as e}from"./client-BGJ40IDc.js";var t={async checkout(t){let{data:n}=await e.post(`/payments/checkout`,{planCode:t.planCode,returnUrl:t.returnUrl});return n},async sync(t){let{data:n}=await e.post(`/payments/${t}/sync`);return n}};export{t};
